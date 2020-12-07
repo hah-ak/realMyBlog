@@ -1,0 +1,96 @@
+.sidebar_icon {
+    position: fixed;
+    width: 40px;
+    height: auto;
+    top:0;
+    right:0;
+    z-index: 15;
+}
+
+.sidebar {
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #320748;
+    transition: 0.5s;
+    overflow: hidden;
+    z-index: 10;
+}
+.sidebar.active,
+.sidebar:hover {
+    width: 300px;
+}
+
+.sidebar ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+    transition-property: background;
+    transition-duration: 2s;
+    color:white;
+}
+.sidebar ul:hover {
+    background: rgb(228, 129, 16);
+    transition-property: background;
+    transition-duration: 2s;
+}
+.sidebar ul span {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.sidebar ul span .menubar_icon {
+    display: flex;
+    width: 60px;
+    height:60px;
+    padding: 10px;
+}
+.sidebar ul span h4 {
+    display: flex;
+}
+.sidebar ul li {
+    display: flex;
+    width: 100%;
+    height:0;
+    list-style: none;
+    padding-left:80px;
+    transform: scaleY(0);
+    transition: all 2s ease;
+}
+.sidebar ul:hover li {
+    display: flex;
+    height:20px;
+    transform: scaleY(1);
+    transition: all 0.5 ease;
+}
+.linktag {
+    text-decoration: none;
+    color:white;
+}
+.linktag:visited {
+    text-decoration: none;
+    color: white;
+}
+
+@media screen and (max-width:768px) {
+    .sidebar{
+        position: fixed;
+        width: 0px;
+        height: 100%;
+        background: #320748;
+        transition: 0.5s;
+        overflow: hidden;
+        z-index: 10;
+    }
+    .sidebar.active,
+    .sidebar:hover {
+        width:100%;
+    }
+}

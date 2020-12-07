@@ -1,0 +1,28 @@
+.intro{
+    display: block;
+    position: relative;
+    width:100%;
+    margin-bottom: 30px;
+}
+.intro h1 {
+    display: block;
+    width: 100%;
+}
+.intro p{
+    display: block;
+    text-align: justify;
+}
+.items_wrapper {
+    display: flex;
+    position: relative;
+    width:100%;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.items_wrapper .item {
+    display: flex;
+    width: 30%;
+    height:1500px;
+    border: 1px solid rgb(101, 53, 233);
+    border-radius: 30px;
+}

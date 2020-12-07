@@ -1,0 +1,67 @@
+.top_navbar{
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    width: 100%;
+    height:40px;
+    background: rgba(70, 33, 172, 0.938);
+    justify-content: center;
+    z-index: 9;
+}
+.top_navbar div {
+    display: block;
+    width: 100px;
+    justify-content: center;
+    flex-direction: column;
+    color:white;
+    margin:0px;
+    padding:0px;
+}
+.top_navbar div:hover {
+    background: white;
+    color:black;
+    
+}
+.top_navbar div span{
+    display: block;
+    text-align: center;
+    height:40px;
+    width:100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.top_navbar div:hover span {
+    padding-bottom: 9px;
+    border-bottom: 1px solid rgba(70, 33, 172, 0.938);
+    border-left: 1px solid rgba(70, 33, 172, 0.938);
+    border-right:1px solid rgba(70, 33, 172, 0.938);
+}
+.top_navbar div ul {
+    display: flex;
+    position: relative;
+    margin:0;
+    padding:0;
+    flex-direction: column;
+    justify-items: flex-start;
+}
+.top_navbar div ul li {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    height: 0;
+    transform: scaleY(0);
+    transition: all 0.5s ease;
+}
+
+.top_navbar div:hover ul li {
+    background:white;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transform: scaleY(1);
+    transition: all 0.5s ease;
+    width:100%;
+}
+

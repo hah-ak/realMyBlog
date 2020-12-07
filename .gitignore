@@ -1,0 +1,9 @@
+.DS_Store
+.vscode
+**/db.sqlite3
+__pycache__
+**/config.json
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+# git config --global core.autocrlf true 해주셈
