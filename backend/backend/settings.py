@@ -15,7 +15,7 @@ import json
 with open('backend/config.json', 'r') as f:
     config = json.load(f)
 
-# config 파일/ {"SECRET_KEY":KEY_number, "DATABASE":{'default':{"ENGINE":'django.db위치',"NAME":BASE_DIR/'db이름'}}
+# config.json 파일 현위치에 만들고/ {"SECRET_KEY":KEY_number, "DATABASE":{'default':{"ENGINE":'django.db위치',"NAME":BASE_DIR/'db이름'}}
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
