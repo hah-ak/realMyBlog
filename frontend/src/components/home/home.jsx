@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Showlist from './showlist';
 import styles from './style.module.css';
 const Home = (props) => {
@@ -30,24 +31,14 @@ const Home = (props) => {
             </div>
             <div className={styles.items_wrapper}>
                 <div className={styles.item}>
-                    <p>Today</p>
-                    <ul>
-                    <li><Showlist posts={posts}/></li>
-                    </ul>
+                    <span className={styles.title}>Today</span>
+                    <Showlist posts={posts}/>
                 </div>
                 <div className={styles.item}>
                     <p>RecentPost</p>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                    </ul>
                 </div>
                 <div className={styles.item}>
                     <p>RecentTeamProject</p>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                    </ul>
                 </div>
             </div>
         

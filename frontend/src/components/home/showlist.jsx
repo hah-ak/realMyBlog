@@ -1,17 +1,24 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import styles from './style.module.css';
 
 const Showlist = (props) => (
-       <div>
+        <>
            {props.posts.map(post => {
                return (
-               <p key={post.id}>
-                   {post.title}
-                   {post.content}
-                   {post.create}
-               </p>
+                <div className={styles.showpost} key={post.id}>
+                   <Link className={styles.linktag} to='/post'>
+                    <p className={styles.posttitle} >
+                        {post.title}
+                    </p>
+                    <p className={styles.postcontent}>
+                        {post.content}
+                    </p>
+                    </Link>
+                </div>
                )
            })}
-       </div>
+        </>
     );
 
 export default Showlist;

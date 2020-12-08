@@ -22,7 +22,42 @@
 .items_wrapper .item {
     display: flex;
     width: 30%;
-    height:1500px;
+    height:1000px;
     border: 1px solid rgb(101, 53, 233);
     border-radius: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+.items_wrapper .item .title {
+    display: flex;
+    font-size: 70px;
+    margin:0px;
+    padding:10px;
+    font-weight: 500;
+}
+.items_wrapper .item .showpost {
+    display: flex;
+    border : 1px solid rgb(101, 53, 233);
+    margin: 5px;
+    width:70%;
+}
+.items_wrapper .item .showpost .posttitle {
+    margin:0px;
+    padding:5px;
+    font-size: 50px;
+    font-weight: 300;
+}
+.items_wrapper .item .showpost .postcontent {
+    margin:0px;
+    padding:5px;
+    font-size: 30px;
+}
+.linktag {
+    text-decoration: none;
+    color:black;
+    overflow: hidden;
+}
+.linktag:visited {
+    text-decoration: none;
+    color: black;
 }
