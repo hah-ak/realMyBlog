@@ -6,7 +6,24 @@ from django.http.response import JsonResponse
 from django.contrib import auth
 from .serializer import PostSerializer
 
+#window function을 위한 모듈들 F는 현재 모델의 어떠한 칼럼을 불러올때 사용된다.
+from django.db.models import Count, Subquery, Window, F, RowRange
+from django.db.models.functions import RowNumber, Rank, Ntile
 # Create your views here.
+
+#window function을 통해 partition을 하고 Ntile을 이용해 row_number<? limit=?의 역할을 해준다.
+def post(reqeust):
+    model = Post.objects.annotate(creates = Window(
+        expression=Ntile(num_buckets=5),
+        partition_by=[F('postIndex')],
+        order_by=F('create').desc(),
+        # frame=RowRange(start=0, end=5)
+    )).values('id','title','postIndex','content','create','update').order_by('postIndex')
+
+    senddata = PostSerializer(model, many=True) #여러 쿼리셋을 serialize 하려면 many=true로 해줘야함
+    
+    return JsonResponse({'posts':senddata.data})
+
 def javascript(request):
     data = PostSerializer.data
     return JsonResponse(data)
