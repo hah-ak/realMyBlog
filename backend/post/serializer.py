@@ -12,6 +12,6 @@ from rest_framework import serializers
 #     #     return comment
 
 class PostSerializer(serializers.ModelSerializer):
-    class meta:
+    class Meta:
         model = Post
         fields = '__all__'
