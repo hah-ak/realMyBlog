@@ -1,11 +1,35 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './style.module.css';
-import {active_hover, inactive_hover, sidebar_toggle} from './sidebarfunc';
+import {active_hover, inactive_hover, sidebar_toggle, sidebar_close} from './sidebarfunc';
 import onmenu from './img/menubar.ico';
-import { Link } from 'react-router-dom';
-import page from './img/page.ico';
+import post from './img/post.ico';
 import recent from './img/recent.ico';
+import home from './img/home.ico';
+import team from './img/team.ico';
+import javascript from './img/javascript.ico';
+import django from './img/django.ico';
+import python from './img/python.ico';
+import react from './img/react.ico';
+import ShowOrder from './showOrder';
 const Sidebar = (props) => {
+    //setstate자체는 비동기적이다. 그래서 단 한번만 해주게 해주는게 주요함
+    //변하지 않을 것들이므로 state를 쓸 필요는 없다.
+    // title, img_src, link_to
+    const inputdata = [
+        ['Home',home,'/'],
+        ['MyPost',post,'/post'],
+        ['TeamProject',team,'/'],
+        ['RecentPost',recent,'/post'],
+        ['JavaScript',javascript,'/'],
+        ['Django',django,'/'],
+        ['Python',python,'/'],
+        ['React',react,'/']
+    ]
+    const orders = []
+    for (let index = 0; index < inputdata.length; index++) {
+        orders.push({'key':index,'title':inputdata[index][0], 'img_src':inputdata[index][1],'link_to':inputdata[index][2]});
+    }
+    
     return (
         <>
             <img src={onmenu} className={'sidebar_icon '+styles.sidebar_icon} onClick={sidebar_toggle}/>
@@ -14,24 +38,18 @@ const Sidebar = (props) => {
                 onMouseOver={active_hover} 
                 onMouseOut={inactive_hover}
             >
-                <ul 
-                    onMouseOver={active_hover} 
-                    onMouseOut={inactive_hover}
-                >
-                    <span><img src={page} className={styles.menubar_icon} alt=""/><h4>Page</h4></span>
-                    <li><Link className={styles.linktag} to='/'>Home</Link></li>
-                    <li><Link className={styles.linktag} to='/post'>MyPost</Link></li>
-                    <li>TeamProject</li>
-                </ul>
-            
-                <ul 
-                    onMouseOver={active_hover} 
-                    onMouseOut={inactive_hover}
-                >
-                    <span><img src={recent} className={styles.menubar_icon} alt=""/><h4>RecentPost</h4></span>  
-                    <li>youknowwhat</li>
-                    <li>youknowwhat2</li>    
-                </ul>
+               {orders.map(order => 
+                        <ShowOrder 
+                            key={order.key}
+                            title={order.title}
+                            img_src={order.img_src}
+                            link_to={order.link_to}
+                            sidebar_close={sidebar_close}
+                            active_hover={active_hover}
+                            inactive_hover={inactive_hover}
+                        />
+                    )
+                }
             </nav>
         </>
     )
