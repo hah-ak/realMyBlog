@@ -22,7 +22,7 @@
 .items_wrapper .item {
     display: flex;
     width: 30%;
-    height:1000px;
+    min-height:500px;
     border: 1px solid rgb(101, 53, 233);
     border-radius: 30px;
     flex-direction: column;
@@ -60,4 +60,13 @@
 .linktag:visited {
     text-decoration: none;
     color: black;
+}
+@media screen and (max-width:768px) {
+    .items_wrapper {
+        flex-direction: column;
+    }
+    .items_wrapper .item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
