@@ -9,7 +9,7 @@ const Home = (props) => {
         const requestOption = {
             method: 'GET'
         };
-        fetch('http://localhost:8000',requestOption)
+        fetch('http://localhost:8000/',requestOption)
         .then(response => response.json())
         .then(result => {setPost(result.post)})
         .catch(error => console.log('error :',error))
