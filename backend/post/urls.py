@@ -2,5 +2,6 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 urlpatterns = [
+    path('',views.post,name='post'),
     path('javascript/', views.javascript, name='javascript'),
 ]
