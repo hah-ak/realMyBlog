@@ -12,6 +12,9 @@ const sidebar_toggle = () => {
     }
     sidebar.classList.toggle(styles.active)
 };
+const sidebar_close = (e) => {
+    sidebar_toggle()
+}
 const add_Event = () => {
     const sidebar = document.querySelector('.sidebar')
     sidebar.addEventListener('mouseover',(e)=>active_hover(e))
@@ -21,20 +24,20 @@ const add_Event = () => {
     ul.addEventListener('moouseout',(e)=>inactive_hover(e))
 }
 const active_hover = (e) => {
-    console.log('abc')
     if (window.innerWidth > 768) {
         const ct= e.currentTarget
-        if (!ct.classList.contains(styles.hover)) {
-            ct.classList.add(styles.hover)
+        if (!ct.classList.contains(styles.active)) {
+            ct.classList.add(styles.active)
         }
     }
+
 }
 const inactive_hover = (e) => {
     if (window.innerWidth > 768) {
         const ct = e.currentTarget
-        if (ct.classList.contains(styles.hover)) {
-            ct.classList.remove(styles.hover)
+        if (ct.classList.contains(styles.active)) {
+            ct.classList.remove(styles.active)
         }
     }
 }
-export {sidebar_toggle, active_hover, inactive_hover,add_Event}
+export {sidebar_toggle, active_hover, inactive_hover,add_Event, sidebar_close}
