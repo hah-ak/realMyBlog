@@ -3,5 +3,5 @@ from django.urls import path, include
 from . import views
 urlpatterns = [
     path('',views.post,name='post'),
-    path('javascript/', views.javascript, name='javascript'),
+    path('<slug:postIndex>/', views.choicepost, name='choicepost'),
 ]
