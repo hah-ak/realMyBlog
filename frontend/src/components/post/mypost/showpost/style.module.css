@@ -1,0 +1,20 @@
+.showpost_div {
+    display: block;
+    background: rgb(240, 240, 240);
+    margin : 20px;
+    padding-left : 10px;
+}
+.showpost_div p {
+    font-weight: 800;
+    font-size: 25px;
+}
+.showpost_div ul {
+}
+.showpost_div ul .content_title {
+    list-style: none;
+    font-weight: 500;
+}
+.showpost_div ul .content_content {
+    list-style: none;
+    font-weight: 300;
+}
