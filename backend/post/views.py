@@ -39,6 +39,12 @@ def choicepost(request, postIndex):
     senddata = PostSerializer(model, many=True)
     return JsonResponse({'posts':senddata.data})
 
+def detailpost(request, postIndex, postid):
+    model = Post.objects.get(postIndex = postIndex, id = postid)
+    senddata = PostSerializer(model)
+    print(senddata.data)
+    return JsonResponse({'detailpost':senddata.data})
+
 # def fn_pagination(request, model, paginate_by = 10):
 #     paginator = Paginator(model, paginate_by)
 #     page_number = request.GET.get('page', 1)
