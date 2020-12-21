@@ -40,4 +40,44 @@ const inactive_hover = (e) => {
         }
     }
 }
-export {sidebar_toggle, active_hover, inactive_hover,add_Event, sidebar_close}
+const upClick = () => {
+    const parent = document.querySelector(`.${styles.items}`)
+    const fchild = parent.firstElementChild
+    const itembox = fchild.firstElementChild
+    itembox.animate([{
+                    transform:'translateX(-300px)',
+                    height:'0px',
+                    padding:'0px'}],{duration:501})
+    // itembox.style.setProperty('animation','transform:translateX(-300px)')
+    setTimeout(() => {
+        fchild.remove()
+        parent.appendChild(fchild)
+        itembox.animate([{
+            transform:'translateX(-300px)',
+            height:'0px',
+            padding:'0px'
+        }],{duration:501,direction:'reverse'})
+    }, 500);
+
+}
+const downClick = () => {
+    const parent = document.querySelector(`.${styles.items}`)
+    const lchild = parent.lastElementChild
+    const itembox = lchild.firstElementChild
+    itembox.animate([{
+                    transform:'translateX(-300px)',
+                    height:'0px',
+                    padding:'0px'}],{duration:501})
+    setTimeout(() => {
+        lchild.remove()
+        parent.insertAdjacentElement('afterbegin',lchild) // 앞 혹은 뒤에 삽입할때 사용.
+        itembox.animate([{
+            transform:'translateX(-300px)',
+            height:'0px',
+            padding:'0px'
+        }],{duration:501,direction:'reverse'})
+    }, 500);
+
+    
+}
+export {sidebar_toggle, active_hover, inactive_hover,add_Event, sidebar_close,upClick,downClick}
