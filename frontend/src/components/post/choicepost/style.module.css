@@ -1,0 +1,39 @@
+.linktag {
+    text-decoration: none;
+    color:black;
+}
+.linktag:visited {
+    text-decoration: none;
+    color: black;
+}
+.choiceposts_wrapper {
+    display: flex;
+    width: 100%;
+    padding:3px 10px 3px 10px;
+    margin:0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-direction: row;
+}
+.j {
+    background: rgb(221, 221, 221);
+}
+.h {
+    background: white;
+}
+p .choiceposts_index {
+    display: flex;
+    width: 5%;
+}
+p .choiceposts_title {
+    display: flex;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width:70%;
+}
+p .choiceposts_create {
+    display: flex;
+    text-align: end;
+    font-size: 20px;
+    width:20%;
+}

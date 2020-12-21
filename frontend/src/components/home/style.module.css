@@ -21,7 +21,7 @@
 }
 .items_wrapper .item {
     display: flex;
-    width: 30%;
+    width: 48%;
     min-height:500px;
     border: 1px solid rgb(101, 53, 233);
     border-radius: 30px;
@@ -35,22 +35,31 @@
     padding:10px;
     font-weight: 500;
 }
-.items_wrapper .item .showpost {
-    display: flex;
-    border : 1px solid rgb(101, 53, 233);
+.showpost {
+    display: block;
+    position:relative;
     margin: 5px;
-    width:70%;
+    width:90%;
+    white-space: nowrap;
 }
-.items_wrapper .item .showpost .posttitle {
+.posttitle {
     margin:0px;
-    padding:5px;
-    font-size: 50px;
-    font-weight: 300;
-}
-.items_wrapper .item .showpost .postcontent {
-    margin:0px;
+    display: block;
     padding:5px;
     font-size: 30px;
+    font-weight: 300;
+    width: 100%;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.postcontent {
+    display:block;
+    margin:0px;
+    padding:5px;
+    font-size: 20spx;
+    width:100%;
+    overflow:hidden;
+    text-overflow: ellipsis;
 }
 .linktag {
     text-decoration: none;
@@ -61,6 +70,21 @@
     text-decoration: none;
     color: black;
 }
+.slidein {
+    animation-name: slidein;
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+}
+@keyframes slidein {
+    from {
+        margin-left: 0%;
+    }
+    to {
+        margin-left: -100%;
+    }
+
+}
 @media screen and (max-width:768px) {
     .items_wrapper {
         flex-direction: column;
@@ -68,5 +92,8 @@
     .items_wrapper .item {
         width: 100%;
         margin-bottom: 10px;
+    }
+    .posttitle {
+        font-size: 30px;
     }
 }
