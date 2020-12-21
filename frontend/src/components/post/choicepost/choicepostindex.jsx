@@ -1,6 +1,6 @@
+import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import Choiceposts from './choiceposts';
 const Choicepostindex = (props) => {
     // async 함수는 promise 객체를 리턴하기 때문에 useEffect 함수 자체를 async 함수로 사용할 수는 없다는 것이다.
@@ -35,7 +35,7 @@ const Choicepostindex = (props) => {
     useEffect(()=>{
         const fetchdata= async () => {
             try {
-                const getdata = await axios.get(`http://localhost:8000/post/${postIndex}`);
+                const getdata = await Axios.get(`http://localhost:8000/post/${postIndex}`);
                 const result = await getdata.data.posts
                 setChoice_posts(result)
             } catch (error) {
@@ -44,9 +44,12 @@ const Choicepostindex = (props) => {
         }
         fetchdata();
     },[postIndex])
+    // const location = useLocation()
+    // const choice_posts= location.state.choice_posts
+    
     return (
         <>
-            {choice_posts.map(post => {
+            {choice_posts.map((post, index) => {
                 return (
                     <Choiceposts
                         key={post.id}
@@ -54,6 +57,7 @@ const Choicepostindex = (props) => {
                         title={post.title}
                         content={post.content}
                         create={post.create}
+                        index={index}
                     />
                 )
             })}

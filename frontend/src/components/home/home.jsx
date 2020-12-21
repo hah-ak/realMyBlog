@@ -13,6 +13,23 @@ const Home = (props) => {
         .then(result => {setPost(result.post)})
         .catch(error => console.log('error :',error))
     },[])
+    
+    const Handdlemouseover = (e) => {
+        e.preventDefault()
+        const ct = e.currentTarget
+        setTimeout(()=>{
+            ct.setAttribute('style','background:white; overflow:visible;')
+        },1000)
+        
+    }
+    const Handdlemouseout = (e) => {
+        e.preventDefault()
+        const ct = e.currentTarget
+        setTimeout(() => {
+            ct.setAttribute('style','background:none; overflow:hidden;')    
+        }, 1000);
+        
+    }
     return (
         
     <>    
@@ -31,13 +48,15 @@ const Home = (props) => {
             <div className={styles.items_wrapper}>
                 <div className={styles.item}>
                     <span className={styles.title}>Today</span>
+                    <Showlist
+                        posts={posts}
+                        Handdlemouseover={Handdlemouseover}
+                        Handdlemouseout={Handdlemouseout}
+                    />
+                </div>
+                <div className={styles.item}>
+                    <span className={styles.title}>RecentPost</span>
                     <Showlist posts={posts}/>
-                </div>
-                <div className={styles.item}>
-                    <p>RecentPost</p>
-                </div>
-                <div className={styles.item}>
-                    <p>RecentTeamProject</p>
                 </div>
             </div>
         

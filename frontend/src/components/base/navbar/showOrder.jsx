@@ -5,11 +5,12 @@ const ShowOrder = (props) => {
     return (
         <Link className={styles.linktag} to={props.link_to}>
             <div 
+                className={styles.itembox}
                 onClick={props.sidebar_close}
                 onMouseOver={props.active_hover} 
                 onMouseOut={props.inactive_hover}
             >
-                <span><img src={props.img_src} className={styles.menubar_icon} alt=""/><h4>{props.title}</h4></span>
+                <span className={styles.item}><img src={props.img_src} className={styles.menubar_icon} alt=""/><h4>{props.title}</h4></span>
                 
             </div>
         </Link>
