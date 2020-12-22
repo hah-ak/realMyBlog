@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styles from './style.module.css';
 import {active_hover, inactive_hover, sidebar_toggle, sidebar_close, upClick, downClick} from './sidebarfunc';
 import onmenu from './img/menubar.ico';

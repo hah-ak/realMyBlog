@@ -9,12 +9,13 @@ import Detailpost from './components/post/detailpost/detailpost';
 import Post from './components/post/mypost/post';
 
 function App() {
+  
   return (
     <>
       <HashRouter>
         <Header />
         <Sidebar />
-        <div className={styles.container}>
+        <div className={`${styles.container}`}>
           <Route path='/' exact={true} component={Home}/>
           {/* exact는 중복출력을 방지해준다. */}
           <Route path='/post' exact={true} component={Post}/>

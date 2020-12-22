@@ -55,7 +55,6 @@ const upClick = () => {
         itembox.animate([{
             transform:'translateX(-300px)',
             height:'0px',
-            padding:'0px'
         }],{duration:501,direction:'reverse'})
     }, 500);
 

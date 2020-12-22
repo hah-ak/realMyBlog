@@ -18,6 +18,7 @@ const Header = (props) => {
                         <li><span>javascript</span></li>
                         <li><span>python</span></li>
                         <li><span>django</span></li>
+                        <li><span>Git</span></li>
                         
                     </ul>
                 </div>
