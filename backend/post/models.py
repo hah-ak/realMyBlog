@@ -5,7 +5,11 @@ class Post(models.Model):
     index_choice = (
         ('javascript','javascript'),
         ('python','python'),
-        ('django','django')
+        ('django','django'),
+        ('git','git'),
+        ('react','react'),
+        ('algorithm','algorithm'),
+        ('teamproject','teamproject')
     )
     title = models.CharField(max_length=100,null=False,blank=False)
     postIndex = models.CharField(choices = index_choice, null=False, blank=False, max_length=50,default='javascript')
