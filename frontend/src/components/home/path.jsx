@@ -17,7 +17,7 @@ const Path = (props) => {
             iterations:'Infinity',
             direction:'alternate'
         })
-    },[props.angle])
+    },[props])
     const cos = Math.cos(45*Math.PI/180)
     const sin = Math.sin(45*Math.PI/180)
     const randint = Math.round(Math.random()*100)
