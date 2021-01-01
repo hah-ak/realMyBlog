@@ -1,6 +1,6 @@
 .container {
   display: block;
-  padding: 60px 60px 60px 90px;
+  padding: 40px 60px 40px 60px;
   min-height:calc(100% - 140px);
 }
 

@@ -1,12 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Showlist from './showlist';
 import styles from './style.module.css';
+import Loading from './loading';
 import {loading} from './animate';
+import Path from './path';
+import down from './img/down.ico';
 const Home = (props) => {
     
     const [posts,setPost] = useState([])
     const loadele = useRef();
+    const [prevent, setPrevent] = useState(true)
     const [child,setChild] = useState({num:1})
+    const circlearray = [0,1,2,3,4,5,6,7,8,9,10]
+    const radius_angle = [[110,30],[120,-40],[130,-60],[140,20],[150,75]]
+    
     useEffect(()=>{
         const requestOption = {
             method: 'GET'
@@ -24,13 +31,28 @@ const Home = (props) => {
             const divchild = appcontainer.querySelector(`div:nth-child(${index+1})`)
             // -표시 대신 카멜케이스로 작성
             divchild.style.zIndex = numchild - index
-            divchild.style.bottom = '0vh'
         }
     },[])
     
 
     useEffect(()=>{
-        loading(loadele.current)
+        const makespan = () => {
+            var num = 100
+            var spanarray = []
+            while (num >= 0) {
+                const spanHeight = 3 + Math.random()*4
+                spanarray.push(spanHeight)
+                num -= spanHeight
+            };
+            return spanarray
+        }
+        const percentage = [1,11,23,36,45,52,68,72,88,92,100]
+        const count = 2
+        const spanarray = makespan()
+
+
+        
+        loading(loadele.current, percentage, count, spanarray)
     },[])
 
     const Handdlemouseover = (e) => {
@@ -49,10 +71,15 @@ const Home = (props) => {
         }, 1000);
         
     }
-    
+    // fill-mode를 이용해 값의 변화없이 깔끔한 변화주기
+    const transfn = (nowchild, translate) => {
+        document.querySelector(`.appcontainer div:nth-child(${nowchild})`).animate([
+            {transform:translate}
+        ],{duration:500,fill:'forwards'})
+    }
     
     const HanddleWheel = (e) =>{
-        const appcontainer = document.querySelector('.appcontainer')
+        // const appcontainer = document.querySelector('.appcontainer')
         // zindex를 통한 페이지 전환 구현
         // const changeZ = (usechild) => {
         //     const getz = appcontainer.querySelector(`div:nth-child(${usechild})`).style.zIndex
@@ -69,47 +96,108 @@ const Home = (props) => {
         //         setChild({num:child.num - 1});
         //     }
         // }
-        const changeBottom = (paramchild) => {
-            const nowchild = appcontainer.querySelector(`div:nth-child(${paramchild})`)
-            const bottom = nowchild.style.bottom
-            if (bottom === '-100vh') {
-                nowchild.animate([
-                    {transform:'translateY(-100vh)'}
-                ],{duration:501})
-                setTimeout(() => {
-                    appcontainer.querySelector(`div:nth-child(${paramchild})`).style.bottom = '0vh'
-                }, 500);
-            } else {
-                nowchild.animate([
-                    {transform:'translateY(100vh)'}
-                ],{duration:501})
-                setTimeout(() => {
-                    appcontainer.querySelector(`div:nth-child(${paramchild})`).style.bottom = '-100vh'
-                }, 500);
-            }
-        }
-        if (e.deltaY >=100 && child.num < appcontainer.childElementCount) {
-                changeBottom(child.num);
+
+            // const changeBottom = (paramchild) => {
+            //     const nowchild = appcontainer.querySelector(`div:nth-child(${paramchild})`)
+            //     const bottom = nowchild.style.bottom
+            //     if (bottom === '-100vh') {
+            //         nowchild.animate([
+            //             {transform:'translateY(-100vh)'}
+            //         ],{duration:500,fill:'forwards'})
+            //         setTimeout(() => {
+            //             // appcontainer.querySelector(`div:nth-child(${paramchild})`).style.bottom = '0vh'
+            //             setPrevent(true)
+            //         }, 500);
+            //     } else {
+            //         nowchild.animate([
+            //             {transform:'translateY(100vh)'}
+            //         ],{duration:500,fill:'forwards'})
+            //         setTimeout(() => {
+            //             // appcontainer.querySelector(`div:nth-child(${paramchild})`).style.bottom = '-100vh'
+            //             setPrevent(true)
+            //         }, 500);
+            //     }
+            // }
+        
+        if (prevent === true) {
+            setPrevent(false)
+            if (e.deltaY >=100 && child.num < document.querySelector('.appcontainer').childElementCount) {
+                transfn(child.num, 'translateY(100vh)')
                 setChild({num:child.num + 1});
-        } else if (e.deltaY <= -100 && child.num > 1) {
-                changeBottom(child.num - 1);
+            } else if (e.deltaY <= -100 && child.num > 1) {
+                transfn(child.num-1, 'translateY(0vh)')
                 setChild({num:child.num - 1});
+            }
+            
+            setTimeout(() => {
+                setPrevent(true)
+            }, 500);
         }
+        
     }
-    
+    const HanddleClick = (string) => {
+        if (string === 'down') {
+            transfn(child.num,'translateY(100vh)')
+            setChild({num:child.num + 1})
+        } else {
+            transfn(child.num - 1, 'translateY(0vh)')
+            setChild({num:child.num - 1})
+        }
+        console.log(string)
+    }
+    const HanddleKeydown = (e) => {
+        
+        console.log(e)
+    }
     
     return (
         
     <>    
             <section className={styles.loading} ref={loadele}>
-                <span className={styles.loadingspan}>
-                    <span className={styles.circleline}>
-                        <span className={styles.circle}></span>
-                    </span>
+                <span className={styles.backspan}>
+                    {/* <span className={styles.frontspan}></span>
+                    <span className={styles.frontspan}></span> */}
                 </span>
-                
+                <span className={`${styles.loadingspan} loadingspan`}>
+                    <svg className={`${styles.svgtag} svgtag`}>
+                        {radius_angle.map((factor,index)=>(
+                            <Path
+                                key={index}
+                                index={index}
+                                radius={factor[0]}
+                                angle={factor[1]}
+                            />
+                            ))}
+                    </svg>
+                    {circlearray.map((i) => (
+                        <Loading
+                            key={i}
+                            i={i}
+                            arraylength={circlearray.length}
+                            count={2}
+                        />  
+                    ))}
+                </span>
+                <span className={`${styles.numbering} numbering`}></span>
             </section>
-            <div className='appcontainer' onWheel={(e) => HanddleWheel(e)}>
+            <div 
+            className={`${styles.appcontainer} appcontainer`} 
+            onWheel={(e) => HanddleWheel(e)}
+            >
+                <div className={styles.items_wrapper}>
+                    <div className={styles.homedeco}>
+                        <h1>HahAk's<br/>
+                            Blog</h1>
+                    </div>
+                    <img
+                            className={styles.upDown}
+                            src={down}
+                            alt="Click or wheel" 
+                            onClick={()=>HanddleClick('down')}
+                            onKeyDown={(e) => HanddleKeydown(e)}
+                        />
+                    
+                </div>
                 <div className={styles.items_wrapper}>
                     <div className={styles.intro}>
                         <h1>
