@@ -1,5 +1,4 @@
 import React from 'react';
-import github from './img/github.ico';
 import styles from './style.module.css';
 const Footer = (props) => {
     return (
@@ -21,7 +20,7 @@ const Footer = (props) => {
                 react 17.0.1, django 3.1.1, djangorestframwork 3.12.1
             </p>
             <div className={styles.icons}>
-                <a href="https://github.com/hah-ak/" target='_blank' rel='noreferrer'><img src={github} alt=""/></a>
+                <a href="https://github.com/hah-ak/" target='_blank' rel='noreferrer'><img src={'/img/github.ico'} alt=""/></a>
             </div>
         </footer>
     );

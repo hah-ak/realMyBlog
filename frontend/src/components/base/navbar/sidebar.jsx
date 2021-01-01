@@ -1,19 +1,7 @@
 import React from 'react';
 import styles from './style.module.css';
 import {active_hover, inactive_hover, sidebar_toggle, sidebar_close, upClick, downClick} from './sidebarfunc';
-import onmenu from './img/menubar.ico';
-import post from './img/post.ico';
-import recent from './img/recent.ico';
-import home from './img/home.ico';
-import team from './img/team.ico';
-import javascript from './img/javascript.ico';
-import django from './img/django.ico';
-import python from './img/python.ico';
-import react from './img/react.ico';
-import up from './img/uparrow.ico';
-import down from './img/downarrow.ico';
 import ShowOrder from './showOrder';
-
 
 // function useGetheight() { 
 //     const [height,setHeight] = useState(window.innerHeight)
@@ -40,14 +28,15 @@ const Sidebar = (props) => {
     //변하지 않을 것들이므로 state를 쓸 필요는 없다.
     // title, img_src, link_to
     const inputdata = [
-        ['Home',home,'/'],
-        ['MyPost',post,'/post'],
-        ['TeamProject',team,'/'],
-        ['RecentPost',recent,'/post'],
-        ['JavaScript',javascript,'/'],
-        ['Django',django,'/'],
-        ['Python',python,'/'],
-        ['React',react,'/']
+        ['Home','/img/home.ico','/'],
+        ['MyPost','/img/post.ico','/post'],
+        ['TeamProject','/img/team.ico','/teamproject'],
+        ['RecentPost','/img/recent.ico','/post'],
+        ['JavaScript','/img/javascript.ico','/post/javascript'],
+        ['Django','/img/django.ico','/post/django'],
+        ['Python','/img/python.ico','/post/python'],
+        ['React','/img/react.ico','/post/react'],
+        ['Git','/img/github.ico','/post/git']
     ]
     const orders = []
     for (let index = 0; index < inputdata.length; index++) {
@@ -56,14 +45,14 @@ const Sidebar = (props) => {
     return (
         <>
             
-            <img src={onmenu} className={'sidebar_icon '+styles.sidebar_icon} onClick={sidebar_toggle}/>
+            <img src={'/img/menubar.ico'} className={'sidebar_icon '+styles.sidebar_icon} onClick={sidebar_toggle}/>
             <nav 
                 className={`sidebar ${styles.sidebar}`} 
                 onMouseOver={active_hover} 
                 onMouseOut={inactive_hover}
             >
                 <span className={`${styles.sidebar_button} ${styles.upbutton}`} onClick={upClick}>
-                    <img className={styles.move} src={up} alt="up"/>
+                    <img className={styles.move} src={'/img/uparrow.ico'} alt="up"/>
                 </span>
                     <div className={styles.items}>
                     {orders.map(order => 
@@ -80,7 +69,7 @@ const Sidebar = (props) => {
                     }
                     </div>
                 <span className={`${styles.sidebar_button} ${styles.downbutton}`} onClick={downClick}>
-                    <img className={styles.move} src={down} alt="down"/>
+                    <img className={styles.move} src={'/img/downarrow.ico'} alt="down"/>
                 </span>
             </nav>
             
