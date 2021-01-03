@@ -1,6 +1,5 @@
 import { HashRouter, Route } from 'react-router-dom';
 import styles from './App.module.css';
-import Footer from './components/base/footer/footer';
 import Header from './components/base/header/header';
 import Sidebar from './components/base/navbar/sidebar';
 import Home from './components/home/home';
@@ -22,7 +21,7 @@ function App() {
           <Route path='/post/:postIndex' exact={true} component={Choicepostindex} />
           <Route path='/post/:postIndex/:postid' exact={true} component={Detailpost} />
         </div>
-        <Footer />
+        
       </HashRouter>
     </>
   );

@@ -73,7 +73,6 @@ const loading = (ele,percentage,count,spanarray, patialtime=100) => {
         const clear = setInterval(interval,100*count)
     }
     loadingPercent(percentage)
-
 }
 
 

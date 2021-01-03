@@ -15,21 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body::-webkit-scrollbar {
-  width:5px;
-}
-body::-webkit-scrollbar-thumb {
-  width: 5px;
-  background-color:thistle;
-  border-radius: 10%;
-}
-body::-webkit-scrollbar-track {
-  background:none;
-}
-body::-webkit-scrollbar-button {
-  width: 0px;
-  height: 0px;
-}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

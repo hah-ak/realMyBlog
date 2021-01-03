@@ -2,7 +2,7 @@ import styles from './style.module.css';
 
 const sidebar_toggle = () => {
     const sidebar = document.querySelector('.sidebar')
-    const sidebar_icon = document.querySelector('.sidebar_icon')
+    const sidebar_icon = document.querySelector(`.${styles.sidebar_icon}`)
     if (sidebar.classList.contains(styles.active)) {
         sidebar_icon.setAttribute('src','img/menubar.ico' )
     } else {
@@ -10,9 +10,7 @@ const sidebar_toggle = () => {
     }
     sidebar.classList.toggle(styles.active)
 };
-const sidebar_close = (e) => {
-    sidebar_toggle()
-}
+
 const add_Event = () => {
     const sidebar = document.querySelector('.sidebar')
     sidebar.addEventListener('mouseover',(e)=>active_hover(e))
@@ -77,4 +75,4 @@ const downClick = () => {
 
     
 }
-export {sidebar_toggle, active_hover, inactive_hover,add_Event, sidebar_close,upClick,downClick}
+export {sidebar_toggle, active_hover, inactive_hover,add_Event, upClick,downClick}

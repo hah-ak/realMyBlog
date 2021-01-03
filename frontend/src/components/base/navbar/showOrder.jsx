@@ -6,7 +6,7 @@ const ShowOrder = (props) => {
         <Link className={styles.linktag} to={props.link_to}>
             <div 
                 className={styles.itembox}
-                onClick={props.sidebar_close}
+                onClick={props.sidebar_toggle}
                 onMouseOver={props.active_hover} 
                 onMouseOut={props.inactive_hover}
             >

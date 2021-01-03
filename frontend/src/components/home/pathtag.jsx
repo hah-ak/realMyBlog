@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const Path = (props) => {
+const Pathtag = (props) => {
     const ref = useRef()
     /* 시작위치: M:절대위치 m:상대위치(움직임) 
         끝나는위치: A일때 x,y에서 멈추고 a일때 dx,dy만큼 움직여서 끝남(오른쪽,아래가 플러스)
@@ -31,4 +31,4 @@ const Path = (props) => {
     )
 }
 
-export default Path;
+export default Pathtag;

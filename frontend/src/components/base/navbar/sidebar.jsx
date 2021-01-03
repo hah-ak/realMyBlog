@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './style.module.css';
-import {active_hover, inactive_hover, sidebar_toggle, sidebar_close, upClick, downClick} from './sidebarfunc';
+import {active_hover, inactive_hover, sidebar_toggle , upClick, downClick} from './sidebarfunc';
 import ShowOrder from './showOrder';
 
 // function useGetheight() { 
@@ -45,7 +45,7 @@ const Sidebar = (props) => {
     return (
         <>
             
-            <img src={'/img/menubar.ico'} className={'sidebar_icon '+styles.sidebar_icon} onClick={sidebar_toggle}/>
+            <img src="/img/menubar.ico" alt="menubar" className={styles.sidebar_icon} onClick={sidebar_toggle}/>
             <nav 
                 className={`sidebar ${styles.sidebar}`} 
                 onMouseOver={active_hover} 
@@ -61,7 +61,7 @@ const Sidebar = (props) => {
                                 title={order.title}
                                 img_src={order.img_src}
                                 link_to={order.link_to}
-                                sidebar_close={sidebar_close}
+                                sidebar_toggle={sidebar_toggle}
                                 active_hover={active_hover}
                                 inactive_hover={inactive_hover}
                             />
