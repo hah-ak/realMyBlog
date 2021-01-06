@@ -1,14 +1,27 @@
 .container {
-  display: block;
-  min-height:100vh;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  width: 100%;
 }
-.sidebar_icon {
-  position: fixed;
-  width: 40px;
-  height: auto;
-  top:0;
-  right:0;
-  z-index: 15;
+.container::-webkit-scrollbar {
+  width:5px;
+}
+.container::-webkit-scrollbar-thumb {
+width: 5px;
+background-color:thistle;
+border-radius: 10%;
+}
+.container::-webkit-scrollbar-track {
+background:none;
+}
+.container::-webkit-scrollbar-button {
+width: 0px;
+height: 0px;
+}
+.wrapper {
+  flex-direction: column;
+  width:100%;
 }
 /* .App-logo {
   height: 40vmin;

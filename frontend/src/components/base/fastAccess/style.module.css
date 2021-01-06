@@ -1,0 +1,21 @@
+.contentnumbers {
+    display: flex;
+    position: fixed;
+    right:30px;
+    top:10%;
+    z-index: 100;
+    flex-direction: column;
+}
+.contentnumbers span {
+    display: flex;
+    cursor: pointer;
+    width:20px;
+}
+.contentnumbers span.active {
+    font-weight: 700;
+    font-size: 50px;
+}
+.upDown {
+    width:20px;
+    height: 15px;
+}

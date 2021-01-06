@@ -1,7 +1,9 @@
 footer {
+    display:flex;
     position: relative;
     background: rgb(83, 83, 83);
     height:140px;
+    width:100%;
 }
 footer p {
     display: block;

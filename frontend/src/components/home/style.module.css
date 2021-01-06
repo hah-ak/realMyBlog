@@ -70,55 +70,24 @@ path {
     transform-origin: center;
     /* animation: grotate 1s ease 0s infinite normal forwards; */
 }
-.contentnumbers {
-    display: flex;
-    position: fixed;
-    right:10px;
-    top:10%;
-    z-index: 160;
-    flex-direction: column;
-}
-.contentnumbers span {
-    display: flex;
-    cursor: pointer;
-}
-.contentnumbers span.active {
-    font-weight: 700;
-    font-size: 50px;
-}
+
+
 .appcontainer {
     display: flex;
     position: relative;
     flex-direction: column;
-    overflow-y:auto;
     scroll-behavior: smooth;
-    height:100vh;
+    width: 100%;
 }
-.appcontainer::-webkit-scrollbar {
-    width:5px;
-}
-.appcontainer::-webkit-scrollbar-thumb {
-width: 5px;
-background-color:thistle;
-border-radius: 10%;
-}
-.appcontainer::-webkit-scrollbar-track {
-background:none;
-}
-.appcontainer::-webkit-scrollbar-button {
-width: 0px;
-height: 0px;
-}
+
 .items_wrapper {
     display: flex;
     position: relative;
     width:100%;
-    left:0;
-    top:0;
-    padding: 40px 60px 40px 60px;
     justify-content: space-around;
     background:white;
-    
+    height:100vh;
+    padding-bottom:30px;
 }
 
 .homedeco {

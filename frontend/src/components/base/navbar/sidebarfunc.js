@@ -1,12 +1,13 @@
 import styles from './style.module.css';
-
+import menubar from '../../img/menubar.ico';
+import close from '../../img/close.ico';
 const sidebar_toggle = () => {
     const sidebar = document.querySelector('.sidebar')
     const sidebar_icon = document.querySelector(`.${styles.sidebar_icon}`)
     if (sidebar.classList.contains(styles.active)) {
-        sidebar_icon.setAttribute('src','img/menubar.ico' )
+        sidebar_icon.setAttribute('src',menubar )
     } else {
-        sidebar_icon.setAttribute('src', 'img/close.ico')
+        sidebar_icon.setAttribute('src', close)
     }
     sidebar.classList.toggle(styles.active)
 };
