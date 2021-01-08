@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/hah-ak/realMyBlog/static/css/main.370e392f.chunk.css",
+    "main.js": "/hah-ak/realMyBlog/static/js/main.d6267c52.chunk.js",
+    "main.js.map": "/hah-ak/realMyBlog/static/js/main.d6267c52.chunk.js.map",
+    "runtime-main.js": "/hah-ak/realMyBlog/static/js/runtime-main.477114a2.js",
+    "runtime-main.js.map": "/hah-ak/realMyBlog/static/js/runtime-main.477114a2.js.map",
+    "static/js/2.9fe4ea33.chunk.js": "/hah-ak/realMyBlog/static/js/2.9fe4ea33.chunk.js",
+    "static/js/2.9fe4ea33.chunk.js.map": "/hah-ak/realMyBlog/static/js/2.9fe4ea33.chunk.js.map",
+    "static/js/3.942c880e.chunk.js": "/hah-ak/realMyBlog/static/js/3.942c880e.chunk.js",
+    "static/js/3.942c880e.chunk.js.map": "/hah-ak/realMyBlog/static/js/3.942c880e.chunk.js.map",
+    "index.html": "/hah-ak/realMyBlog/index.html",
+    "static/css/main.370e392f.chunk.css.map": "/hah-ak/realMyBlog/static/css/main.370e392f.chunk.css.map",
+    "static/js/2.9fe4ea33.chunk.js.LICENSE.txt": "/hah-ak/realMyBlog/static/js/2.9fe4ea33.chunk.js.LICENSE.txt",
+    "static/media/style.module.css": "/hah-ak/realMyBlog/static/media/background.b62a5268.jpg",
+    "static/media/close.50b3e062.ico": "/hah-ak/realMyBlog/static/media/close.50b3e062.ico",
+    "static/media/django.25b323e7.ico": "/hah-ak/realMyBlog/static/media/django.25b323e7.ico",
+    "static/media/down.c6fecd7b.ico": "/hah-ak/realMyBlog/static/media/down.c6fecd7b.ico",
+    "static/media/git.a36dc3e5.ico": "/hah-ak/realMyBlog/static/media/git.a36dc3e5.ico",
+    "static/media/home.76559052.ico": "/hah-ak/realMyBlog/static/media/home.76559052.ico",
+    "static/media/javascript.13ae2225.ico": "/hah-ak/realMyBlog/static/media/javascript.13ae2225.ico",
+    "static/media/jquery.49a886d5.ico": "/hah-ak/realMyBlog/static/media/jquery.49a886d5.ico",
+    "static/media/menubar.d827b89b.ico": "/hah-ak/realMyBlog/static/media/menubar.d827b89b.ico",
+    "static/media/mysql.7eec142f.ico": "/hah-ak/realMyBlog/static/media/mysql.7eec142f.ico",
+    "static/media/portfolio.2b3759cc.ico": "/hah-ak/realMyBlog/static/media/portfolio.2b3759cc.ico",
+    "static/media/post.14695a17.ico": "/hah-ak/realMyBlog/static/media/post.14695a17.ico",
+    "static/media/python.b4d94be7.ico": "/hah-ak/realMyBlog/static/media/python.b4d94be7.ico",
+    "static/media/react.ab630cb4.ico": "/hah-ak/realMyBlog/static/media/react.ab630cb4.ico",
+    "static/media/recent.a034f102.ico": "/hah-ak/realMyBlog/static/media/recent.a034f102.ico",
+    "static/media/team.2c0145ea.ico": "/hah-ak/realMyBlog/static/media/team.2c0145ea.ico"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.477114a2.js",
+    "static/js/2.9fe4ea33.chunk.js",
+    "static/css/main.370e392f.chunk.css",
+    "static/js/main.d6267c52.chunk.js"
+  ]
+}
