@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/realMyBlog/static/css/main.d1e81b93.chunk.css",
-    "main.js": "/realMyBlog/static/js/main.d6267c52.chunk.js",
-    "main.js.map": "/realMyBlog/static/js/main.d6267c52.chunk.js.map",
+    "main.css": "/realMyBlog/static/css/main.6722d410.chunk.css",
+    "main.js": "/realMyBlog/static/js/main.6b83c8d8.chunk.js",
+    "main.js.map": "/realMyBlog/static/js/main.6b83c8d8.chunk.js.map",
     "runtime-main.js": "/realMyBlog/static/js/runtime-main.9e2cc670.js",
     "runtime-main.js.map": "/realMyBlog/static/js/runtime-main.9e2cc670.js.map",
     "static/js/2.9fe4ea33.chunk.js": "/realMyBlog/static/js/2.9fe4ea33.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.942c880e.chunk.js": "/realMyBlog/static/js/3.942c880e.chunk.js",
     "static/js/3.942c880e.chunk.js.map": "/realMyBlog/static/js/3.942c880e.chunk.js.map",
     "index.html": "/realMyBlog/index.html",
-    "static/css/main.d1e81b93.chunk.css.map": "/realMyBlog/static/css/main.d1e81b93.chunk.css.map",
+    "static/css/main.6722d410.chunk.css.map": "/realMyBlog/static/css/main.6722d410.chunk.css.map",
     "static/js/2.9fe4ea33.chunk.js.LICENSE.txt": "/realMyBlog/static/js/2.9fe4ea33.chunk.js.LICENSE.txt",
     "static/media/style.module.css": "/realMyBlog/static/media/background.b62a5268.jpg",
     "static/media/close.50b3e062.ico": "/realMyBlog/static/media/close.50b3e062.ico",
@@ -22,6 +22,7 @@
     "static/media/jquery.49a886d5.ico": "/realMyBlog/static/media/jquery.49a886d5.ico",
     "static/media/menubar.d827b89b.ico": "/realMyBlog/static/media/menubar.d827b89b.ico",
     "static/media/mysql.7eec142f.ico": "/realMyBlog/static/media/mysql.7eec142f.ico",
+    "static/media/portBG.922ec975.png": "/realMyBlog/static/media/portBG.922ec975.png",
     "static/media/portfolio.2b3759cc.ico": "/realMyBlog/static/media/portfolio.2b3759cc.ico",
     "static/media/post.14695a17.ico": "/realMyBlog/static/media/post.14695a17.ico",
     "static/media/python.b4d94be7.ico": "/realMyBlog/static/media/python.b4d94be7.ico",
@@ -32,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.9e2cc670.js",
     "static/js/2.9fe4ea33.chunk.js",
-    "static/css/main.d1e81b93.chunk.css",
-    "static/js/main.d6267c52.chunk.js"
+    "static/css/main.6722d410.chunk.css",
+    "static/js/main.6b83c8d8.chunk.js"
   ]
 }
