@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/realMyBlog/static/css/main.c5d53306.chunk.css",
-    "main.js": "/realMyBlog/static/js/main.0d42382e.chunk.js",
-    "main.js.map": "/realMyBlog/static/js/main.0d42382e.chunk.js.map",
+    "main.css": "/realMyBlog/static/css/main.184fff56.chunk.css",
+    "main.js": "/realMyBlog/static/js/main.f219ad90.chunk.js",
+    "main.js.map": "/realMyBlog/static/js/main.f219ad90.chunk.js.map",
     "runtime-main.js": "/realMyBlog/static/js/runtime-main.9e2cc670.js",
     "runtime-main.js.map": "/realMyBlog/static/js/runtime-main.9e2cc670.js.map",
     "static/js/2.9fe4ea33.chunk.js": "/realMyBlog/static/js/2.9fe4ea33.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.942c880e.chunk.js": "/realMyBlog/static/js/3.942c880e.chunk.js",
     "static/js/3.942c880e.chunk.js.map": "/realMyBlog/static/js/3.942c880e.chunk.js.map",
     "index.html": "/realMyBlog/index.html",
-    "static/css/main.c5d53306.chunk.css.map": "/realMyBlog/static/css/main.c5d53306.chunk.css.map",
+    "static/css/main.184fff56.chunk.css.map": "/realMyBlog/static/css/main.184fff56.chunk.css.map",
     "static/js/2.9fe4ea33.chunk.js.LICENSE.txt": "/realMyBlog/static/js/2.9fe4ea33.chunk.js.LICENSE.txt",
     "static/media/style.module.css": "/realMyBlog/static/media/background.b62a5268.jpg",
     "static/media/BG.6e1d57d9.png": "/realMyBlog/static/media/BG.6e1d57d9.png",
@@ -33,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.9e2cc670.js",
     "static/js/2.9fe4ea33.chunk.js",
-    "static/css/main.c5d53306.chunk.css",
-    "static/js/main.0d42382e.chunk.js"
+    "static/css/main.184fff56.chunk.css",
+    "static/js/main.f219ad90.chunk.js"
   ]
 }
