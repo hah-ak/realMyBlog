@@ -16,8 +16,9 @@ const PortFolio = (props) => {
     const introRef = useRef();
     useEffect(()=>{
         const backColors = [portBG,'#F67280','#C06C84','#6C5B7B','#355C7D']
+
         backColors.forEach((element,index) => {
-            typeof element !== 'string' ?
+            element.indexOf('#',0) === -1 ?
             containerRef.current.querySelector(`div:nth-child(${index+1})`).style.backgroundImage = `url(${element})`:
             containerRef.current.querySelector(`div:nth-child(${index+1})`).style.background = element    
         });
