@@ -134,6 +134,7 @@ ul li span {
     border-radius: 20px;
     color:white;
     text-align: center;
+    font-family: koreaB;
 }
 .project_explain {
     display: none;
