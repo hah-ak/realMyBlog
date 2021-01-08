@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/realMyBlog/static/css/main.6722d410.chunk.css",
-    "main.js": "/realMyBlog/static/js/main.fcc84bfe.chunk.js",
-    "main.js.map": "/realMyBlog/static/js/main.fcc84bfe.chunk.js.map",
+    "main.css": "/realMyBlog/static/css/main.c5d53306.chunk.css",
+    "main.js": "/realMyBlog/static/js/main.0d42382e.chunk.js",
+    "main.js.map": "/realMyBlog/static/js/main.0d42382e.chunk.js.map",
     "runtime-main.js": "/realMyBlog/static/js/runtime-main.9e2cc670.js",
     "runtime-main.js.map": "/realMyBlog/static/js/runtime-main.9e2cc670.js.map",
     "static/js/2.9fe4ea33.chunk.js": "/realMyBlog/static/js/2.9fe4ea33.chunk.js",
@@ -10,30 +10,30 @@
     "static/js/3.942c880e.chunk.js": "/realMyBlog/static/js/3.942c880e.chunk.js",
     "static/js/3.942c880e.chunk.js.map": "/realMyBlog/static/js/3.942c880e.chunk.js.map",
     "index.html": "/realMyBlog/index.html",
-    "static/css/main.6722d410.chunk.css.map": "/realMyBlog/static/css/main.6722d410.chunk.css.map",
+    "static/css/main.c5d53306.chunk.css.map": "/realMyBlog/static/css/main.c5d53306.chunk.css.map",
     "static/js/2.9fe4ea33.chunk.js.LICENSE.txt": "/realMyBlog/static/js/2.9fe4ea33.chunk.js.LICENSE.txt",
     "static/media/style.module.css": "/realMyBlog/static/media/background.b62a5268.jpg",
+    "static/media/BG.6e1d57d9.png": "/realMyBlog/static/media/BG.6e1d57d9.png",
+    "static/media/bolloon.d3550d33.png": "/realMyBlog/static/media/bolloon.d3550d33.png",
     "static/media/close.50b3e062.ico": "/realMyBlog/static/media/close.50b3e062.ico",
     "static/media/django.25b323e7.ico": "/realMyBlog/static/media/django.25b323e7.ico",
     "static/media/down.c6fecd7b.ico": "/realMyBlog/static/media/down.c6fecd7b.ico",
     "static/media/git.a36dc3e5.ico": "/realMyBlog/static/media/git.a36dc3e5.ico",
     "static/media/home.76559052.ico": "/realMyBlog/static/media/home.76559052.ico",
     "static/media/javascript.13ae2225.ico": "/realMyBlog/static/media/javascript.13ae2225.ico",
-    "static/media/jquery.49a886d5.ico": "/realMyBlog/static/media/jquery.49a886d5.ico",
     "static/media/menubar.d827b89b.ico": "/realMyBlog/static/media/menubar.d827b89b.ico",
-    "static/media/mysql.7eec142f.ico": "/realMyBlog/static/media/mysql.7eec142f.ico",
-    "static/media/portBG.922ec975.png": "/realMyBlog/static/media/portBG.922ec975.png",
     "static/media/portfolio.2b3759cc.ico": "/realMyBlog/static/media/portfolio.2b3759cc.ico",
     "static/media/post.14695a17.ico": "/realMyBlog/static/media/post.14695a17.ico",
     "static/media/python.b4d94be7.ico": "/realMyBlog/static/media/python.b4d94be7.ico",
     "static/media/react.ab630cb4.ico": "/realMyBlog/static/media/react.ab630cb4.ico",
     "static/media/recent.a034f102.ico": "/realMyBlog/static/media/recent.a034f102.ico",
+    "static/media/skillBG.b1eac0dd.png": "/realMyBlog/static/media/skillBG.b1eac0dd.png",
     "static/media/team.2c0145ea.ico": "/realMyBlog/static/media/team.2c0145ea.ico"
   },
   "entrypoints": [
     "static/js/runtime-main.9e2cc670.js",
     "static/js/2.9fe4ea33.chunk.js",
-    "static/css/main.6722d410.chunk.css",
-    "static/js/main.fcc84bfe.chunk.js"
+    "static/css/main.c5d53306.chunk.css",
+    "static/js/main.0d42382e.chunk.js"
   ]
 }
