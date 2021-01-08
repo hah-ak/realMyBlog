@@ -29,6 +29,14 @@ ul {
     flex-direction: column;
     overflow: hidden;
     align-items: center;
+    justify-content: center;
+    background-size: 100% 100vh;
+}
+.intro {
+    display: flex;
+    font-size: 10vh;
+    height: fit-content;
+    text-align: center;
 }
 p.title {
     display: flex;

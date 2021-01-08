@@ -7,16 +7,30 @@ import python from '../img/python.ico';
 import react from '../img/react.ico';
 import jquery from '../img/jquery.ico';
 import mysql from '../img/mysql.ico';
+import portBG from '../img/portBG.png';
 const PortFolio = (props) => {
     const width = props.width
     const [prevent, setPrevent] = useState(false);
-    const explainRef = useRef([0,1])
-    const containerRef=  useRef()
+    const explainRef = useRef([0,1]);
+    const containerRef=  useRef();
+    const introRef = useRef();
     useEffect(()=>{
-        const backColors = ['#F8B195','#F67280','#C06C84','#6C5B7B','#355C7D']
+        const backColors = [portBG,'#F67280','#C06C84','#6C5B7B','#355C7D']
         backColors.forEach((element,index) => {
+            typeof element !== 'string' ?
+            containerRef.current.querySelector(`div:nth-child(${index+1})`).style.backgroundImage = `url(${element})`:
             containerRef.current.querySelector(`div:nth-child(${index+1})`).style.background = element    
         });
+    },[])
+    useEffect(()=>{
+        const text = introRef.current.innerText
+        introRef.current.innerText = ''
+        const textArray = [[],[],[],[]]
+        for (let i = 0; i <= text.length/4; i++) {
+            const element = text.slice(4*i,4*i+4);
+            textArray[i%4].push(element);
+        }
+        
     },[])
     const handdleClickLang = (e,number) => {
         e.preventDefault()
@@ -47,8 +61,10 @@ const PortFolio = (props) => {
     return (
         <div className={styles.appcontainer} ref={containerRef} onWheel={(e) => handdleWheel(e)} onTouchMove={(e)=>handdleTouch(e)}>
             <div className={styles.items_wrapper}>
-                <div className={styles.intro}></div>
-            나날이 만들어가는것에 성취감을 느끼는 개발자가 되고싶은 김용철입니다.
+                <div className={styles.intro} ref={introRef}>
+                나날이 만들어가는것에 성취감을 느끼는 개발자가 되고싶은 김용철입니다.
+                </div>
+            
             </div>
             <div className={styles.items_wrapper}>
                 <p className={styles.title}>학력사항</p>
