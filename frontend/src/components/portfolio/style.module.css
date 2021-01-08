@@ -22,6 +22,8 @@ ul {
 }
 ul li span {
     color:#fff589;
+    font-family: korea;
+    font-weight: 900;
 }
 .appcontainer {
     height:100vh;
@@ -121,24 +123,27 @@ ul li span {
 .click_box {
     display: flex;
     flex-direction: row;
+    width:100%;
 }
 .click_explain {
     display: flex;
     cursor: pointer;
     font-size: 4vh;
     margin: 1vh;
-    height: fit-content;
-    background-color: rgba(255, 208, 163, 0.486);
+    padding:2vh;
     border-radius: 20px;
     color:white;
+    text-align: center;
 }
 .project_explain {
     display: none;
     flex-direction: column;
 }
-.project_explain p.title {
+.project_explain .explainTitle {
     display: flex;
     font-size: 5vh;
+    font-family: koreaB;
+    color:white;
 }
 .project_explain .project_detail {
     display: flex;
@@ -151,6 +156,7 @@ ul li span {
     display: block;
     font-size: 4vh;
     font-weight: 500;
+    font-family: koreaB;
 }
 .image_box,
 .list_box {
@@ -176,6 +182,7 @@ ul li span {
     display: flex;
     font-size: 3vh;
     width:50%;
+    word-break: break-all;
 }
 .image_box li {
     display: flex;
@@ -188,7 +195,14 @@ ul li span {
     height: 20vh;
     width:20vh;
 }
-
+.urlclick {
+    cursor: pointer;
+    color:blue;
+    font-style: oblique;
+}
+.urlclick:visited {
+    color:purple;
+}
 @media screen and (max-width:768px) {
     .item_box {
         display: block;

@@ -78,6 +78,9 @@ const PortFolio = (props) => {
             }, 500);
         }
     }
+    const linkClick = (e) => {
+        window.open(e.currentTarget.innerText,'_blank')
+    }
     const handdleTouch = (e) => {
         console.log(e)
     }
@@ -94,7 +97,7 @@ const PortFolio = (props) => {
             <div className={styles.items_wrapper}>
                 <p className={styles.title}>Educational History</p>
                 <ul className={styles.list_box}>
-                    <li style={{color:'#feeed6'}}>
+                    <li>
                         <span className={styles.order}>최종학력</span>
                         <span className={styles.content}>전남대학교 졸업 <br/> 2011.02~2018.02</span>
                     </li>
@@ -141,12 +144,14 @@ const PortFolio = (props) => {
                             <span
                                 className={styles.click_explain}
                                 onClick={(e)=>handdleClickLang(e,0)}
+                                style={{backgroundColor:'#ee0e47'}}
                             >
                                 사용언어
                             </span>
                             <span
                                 className={styles.click_explain}
                                 onClick={(e)=>handdleClickExp(e,0)}
+                                style={{backgroundColor:'#ee0e47'}}
                             >
                                 상세설명
                             </span>
@@ -162,18 +167,22 @@ const PortFolio = (props) => {
                                     <span className={styles.content}>react, django</span>
                                 </li>
                                 <li>
-                                    <span className={styles.order}>database</span>
+                                    <span className={styles.order}>DB</span>
                                     <span className={styles.content}>sqlite</span>
                                 </li>
                                 <li>
                                     <span className={styles.order}>기타</span>
                                     <span className={styles.content}>git, yarn</span>
                                 </li>
+                                <li>
+                                    <span className={styles.order}>GitHub</span>
+                                    <span className={`${styles.content} ${styles.urlclick}`} onClick={(e)=>linkClick(e)}>https://github.com/hah-ak/realMyBlog</span>
+                                </li>
                             </ul>
                         </div>
                         <div className={styles.project_explain}>
-                            <p className={styles.title}>상세내용설명</p>
-                            <div className={styles.project_detail}>
+                            <p className={styles.explainTitle}>상세내용설명</p>
+                            <div className={styles.project_detail} style={{color:'#ffcf62'}}>
                                 반응형 웹페이지 제작하여 어떤 기기로도 깨지지 않고 볼 수 있도록 제작하였습니다.
                                 주요 컨텐츠를 제외한 보조 ui요소(sidebar, 바로가기, hearder등)
                                 는 사용자가 선택적으로 언제든 지울 수 있도록 제작하였습니다.
@@ -195,12 +204,14 @@ const PortFolio = (props) => {
                             <span 
                                 className={styles.click_explain}
                                 onClick={(e)=>handdleClickLang(e,1)}
+                                style={{backgroundColor:'#de73d4'}}
                             >
                                 사용언어
                             </span>
                             <span
                                 className={styles.click_explain}
                                 onClick={e=>handdleClickExp(e,1)}
+                                style={{backgroundColor:'#de73d4'}}
                             >
                                 상세설명
                             </span>
@@ -216,23 +227,27 @@ const PortFolio = (props) => {
                                     <span className={styles.content}>django</span>
                                 </li>
                                 <li>
-                                    <span className={styles.order}>database</span>
+                                    <span className={styles.order}>DB</span>
                                     <span className={styles.content}>mySQL</span>
                                 </li>
                                 <li>
                                     <span className={styles.order}>기타</span>
                                     <span className={styles.content}>git, jquery</span>
                                 </li>
+                                <li>
+                                    <span className={styles.order}>GitHub</span>
+                                    <span className={`${styles.content} ${styles.urlclick}`} onClick={(e)=>linkClick(e)}>https://github.com/helloworldjay/CrimeReport</span>
+                                </li>
                             </ul>
                         </div>
                         <div className={styles.project_explain}>
-                            <p className={styles.title}>상세내용설명</p>
+                            <p className={styles.explainTitle}>상세내용설명</p>
                             <div className={styles.project_detail}>
                                 Django를 이용하여 각 지역의 정치인들에 대한 정보를 알려주는 페이지로
                                 기본적인 CRUD를 구현하여 로그인, 로그아웃, 게시판, 댓글쓰기 등이 가능하며,
                                 search기능을 만들었고, d3라이브러리를 이용해 만들어진 지도를 이용해,
                                 지역을 클릭하면 그 지역의 정치인에 대한 정보가 나오도록 만들었습니다.
-                                <p className={styles.myRole}>myRole</p>
+                                <p className={styles.myRole} style={{color:'white'}}>myRole</p>
                                 postApp의 전체 front-end, back-end
                                 영역과 main페이지의 지도 클릭시 정보를 받아오는 비동기 처리 담당
                                 
