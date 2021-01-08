@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './style.module.css';
-import {active_hover, inactive_hover, sidebar_toggle , upClick, downClick} from './sidebarfunc';
+import {active_hover, inactive_hover } from './sidebarfunc';
 import ShowOrder from './showOrder';
 import home from '../../img/home.ico';
 import post from '../../img/post.ico';
@@ -11,6 +11,7 @@ import django from '../../img/django.ico';
 import python from '../../img/python.ico';
 import react from '../../img/react.ico';
 import git from '../../img/git.ico';
+import portfolio from '../../img/portfolio.ico';
 import menubar from '../../img/menubar.ico';
 import { useHistory } from 'react-router-dom';
 // function useGetheight() { 
@@ -37,7 +38,6 @@ const Sidebar = (props) => {
     //setstate자체는 비동기적이다. 그래서 단 한번만 해주게 해주는게 주요함
     //변하지 않을 것들이므로 state를 쓸 필요는 없다.
     // title, img_src, link_to
-
     const inputdata = [
         ['Home',home,'/'],
         ['MyPost',post,'/post'],
@@ -47,8 +47,10 @@ const Sidebar = (props) => {
         ['Django',django,'/post/django'],
         ['Python',python,'/post/python'],
         ['React',react,'/post/react'],
-        ['Git',git,'/post/git']
+        ['Git',git,'/post/git'],
+        ['PortFolio',portfolio, '/portfolio']
     ]
+    const clickRef =  useRef();
     const orders = []
     for (let index = 0; index < inputdata.length; index++) {
         orders.push({'key':index,'title':inputdata[index][0], 'img_src':inputdata[index][1],'link_to':inputdata[index][2]});
@@ -60,18 +62,21 @@ const Sidebar = (props) => {
             pathname:link
         })
     }
+
     return (
         <>
             
-            
+            <img src={menubar} alt="menubar"
+              className={styles.sidebar_icon}
+              onClick={(e)=>props.menubarClick(e,clickRef)}
+              ref={clickRef}
+            />
             <nav 
-                className={`sidebar ${styles.sidebar}`} 
+                className={`sidebar ${styles.sidebar} ${props.sidebarState === 'visible'? styles.visible : ''}`} 
                 onMouseOver={active_hover} 
                 onMouseOut={inactive_hover}
             >
-                <img src={menubar} alt="menubar" className={styles.sidebar_icon} onClick={sidebar_toggle}/>
                 <div className={styles.items}>
-                
                     {/* <span className={`${styles.sidebar_button} ${styles.upbutton}`} onClick={upClick}>
                         <img className={styles.move} src={'/img/uparrow.ico'} alt="up"/>
                     </span> */}

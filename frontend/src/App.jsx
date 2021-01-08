@@ -1,14 +1,15 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import styles from './App.module.css';
-import Footer from './components/base/footer/footer';
 import Header from './components/base/header/header';
 import Sidebar from './components/base/navbar/sidebar';
 import Home from './components/home/home';
+import PortFolio from './components/portfolio/portFolio';
 import Choicepostindex from './components/post/choicepost/choicepostindex';
 import Detailpost from './components/post/detailpost/detailpost';
 import Post from './components/post/mypost/post';
-
+import menubar from './components/img/menubar.ico';
+import close from './components/img/close.ico';
 // window창 크기의 변화에 따라 높이와 변화를 인식하는 state의 역할을 해준다.
 const useWindowSize = () => {
   const [size, setSize] = useState([window.innerHeight,window.innerWidth])
@@ -24,16 +25,33 @@ const useWindowSize = () => {
 }
 
 function App() {
+  const clickRef = useRef();
   const [height,width] = useWindowSize();
+  const [sidebarState,setSidebarState] = useState('hidden');
+  const menubarClick = (e,ref) => {
+    e.preventDefault();
+    if (sidebarState === 'hidden') {
+      setSidebarState('visible')
+      ref.current.setAttribute('src',close)
+    } else {
+      setSidebarState('hidden')
+      ref.current.setAttribute('src',menubar)
+    }
+  }
   return (
     <>
       <HashRouter>
         <div
           className={`${styles.container}`}
         >
-          <Sidebar />
-          <div className={styles.wrapper}>
-            <Header />
+          <Sidebar sidebarState={sidebarState} menubarClick={menubarClick}/>
+          <div className={`${styles.wrapper} ${sidebarState === 'visible' ? styles.hidden : ''}`}>
+            <img src={menubar} alt="menubar"
+              className={styles.sidebar_icon}
+              onClick={(e)=>menubarClick(e,clickRef)}
+              ref={clickRef}
+              />
+            <Header sidebarState={sidebarState}/>
             <Route
               path='/'
               exact={true}
@@ -48,7 +66,7 @@ function App() {
             <Route path='/post' exact={true} component={Post}/>
             <Route path='/post/:postIndex' exact={true} component={Choicepostindex} />
             <Route path='/post/:postIndex/:postid' exact={true} component={Detailpost} />
-            <Footer />
+            <Route path='/portfolio' exact={true} render={()=><PortFolio width={width} height={height}/>} />
           </div>
           
         </div>

@@ -80,7 +80,6 @@ const Home = ({width,height}) => {
     return (
         
     <>  
-    {console.log(11111)}
         <FastAccess 
             childRen={childRen}
         />

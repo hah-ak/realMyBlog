@@ -1,21 +1,17 @@
-.sidebar_icon {
-    position:absolute;
-    width: 40px;
-    height: 40px;
-    right:-40px;
-}
-
 .sidebar {
     display: flex;
     position: sticky;
     bottom:0px;
-    width: 60px;
-    height:fit-content;
-    min-height: 150vh;
+    width: 0px;
+    height: 100%;
+    overflow-y: auto;
     margin:0px;
     background: #320748;
     transition: 0.5s;
     
+}
+.sidebar.visible {
+    width: 60px;
 }
 .sidebar.active {
     width: 300px;
@@ -118,23 +114,59 @@
     text-decoration: none;
     color: white;
 }
-
+.sidebar_icon {
+    width: 0;
+    height:0;
+    top:0px;
+    right:0px;
+    position: fixed;
+    z-index: 40;
+}
+.sidebar::-webkit-scrollbar {
+    width:5px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color:thistle;
+    border-radius: 10%;
+}
+.sidebar::-webkit-scrollbar-track {
+    background:none;
+}
+.sidebar::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
 @media screen and (max-width:768px) {
     .sidebar{
         position: fixed;
         width: 0px;
         height: 100%;
         background: #320748;
-        transition: 0.5s;
-        overflow: hidden;
+        transition-duration: 0.5s;
+        overflow-y: auto;
+        z-index: 20;
     }
-    .sidebar .sidebar_button{
-        width:0px;
+    .sidebar::-webkit-scrollbar {
+        width:5px;
     }
-    .sidebar.active {
+    .sidebar::-webkit-scrollbar-thumb {
+        width: 5px;
+        background-color:thistle;
+        border-radius: 10%;
+    }
+    .sidebar::-webkit-scrollbar-track {
+    background:none;
+    }
+    .sidebar::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+    }
+    .sidebar.visible {
         width:100%;
     }
-    .sidebar.active .sidebar_button{
-        width:100%;
+    .sidebar_icon {
+        width:40px;
+        height:40px;
     }
 }

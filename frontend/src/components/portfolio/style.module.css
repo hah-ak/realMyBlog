@@ -1,0 +1,163 @@
+ul {
+    list-style: none;
+    width:90%;
+    padding: 0;
+}
+.appcontainer {
+    height:100vh;
+    overflow:hidden;
+}
+.appcontainer::-webkit-scrollbar {
+    width:5px;
+}
+.appcontainer::-webkit-scrollbar-thumb {
+    width: 5px;
+    background-color:thistle;
+    border-radius: 10%;
+}
+.appcontainer::-webkit-scrollbar-track {
+    background:none;
+}
+.appcontainer::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+.items_wrapper {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+}
+p.title {
+    display: flex;
+    width: 90%;
+    text-align: center;
+    margin:0;
+    padding:0;
+    height:15vh;
+    font-size: 10vh;
+}
+.item_box {
+    display: flex;
+    width:90%;
+    flex-direction: row;
+    height:85vh;
+    align-items: center;
+    justify-content: space-between;
+}
+.project_title {
+    display: flex;
+    font-size: 8vh;
+    height:10vh;
+    width: 90%;
+    margin:1vh 0 1vh 0;
+    padding:0;
+    text-align: center;
+}
+.project_img {
+    display: flex;
+    width: 45%;
+    flex-direction: column;
+    height:75vh;
+}
+
+.project_img img {
+    display:flex;
+    height:65vh;
+    width: 100%;
+}
+.project_explainbox {
+    display: flex;
+    width: 45%;
+    height:75vh;
+    flex-direction: column;
+}
+.click_box {
+    display: flex;
+    flex-direction: row;
+}
+.click_explain {
+    display: flex;
+    cursor: pointer;
+    font-size: 4vh;
+    margin: 1vh;
+    height: fit-content;
+    background-color: rgba(248, 0, 0, 0.486);
+    border-radius: 20px;
+}
+.project_explain {
+    display: none;
+    flex-direction: column;
+}
+.project_explain p.title {
+    display: flex;
+    font-size: 5vh;
+}
+.project_explain .project_detail {
+    display: flex;
+    width:100%;
+    font-size: 2vh;
+    flex-direction: column;
+    
+}
+.project_explain .myRole {
+    display: block;
+    font-size: 4vh;
+    font-weight: 500;
+}
+.image_box,
+.list_box {
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    justify-content: center;
+}
+.list_box li {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    padding:5px;
+}
+.list_box li .order {
+    display: flex;
+    font-size: 5vh;
+    font-weight: 600;
+    width:50%;
+}
+.list_box li .content {
+    display: flex;
+    font-size: 3vh;
+    width:50%;
+}
+.image_box li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding:5px;
+}
+.image_box li img {
+    height: 20vh;
+    width:20vh;
+}
+
+@media screen and (max-width:768px) {
+    .item_box {
+        display: block;
+        overflow: hidden;
+    }
+    .project_explainbox {
+        display: inline;
+        position: relative;
+        float: right;
+        width:100%;
+    }
+    .project_img {
+        display: inline;
+        position: relative;
+        float: right;
+        width:100%;
+    }
+}
