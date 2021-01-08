@@ -1,7 +1,27 @@
+@font-face{
+    font-family: korea;
+    src:url('../font/HANBatang.ttf');
+}
+@font-face{
+    font-family: koreaB;
+    src:url('../font/HANBatangB.ttf');
+}
+@font-face{
+    font-family: english;
+    src:url('../font/ALGER.TTF');
+}
+@font-face{
+    font-family: projectTitle;
+    src:url('../font/Asia아트1.ttf');
+}
+
 ul {
     list-style: none;
     width:90%;
     padding: 0;
+}
+ul li span {
+    color:#fff589;
 }
 .appcontainer {
     height:100vh;
@@ -35,10 +55,22 @@ ul {
 .intro {
     display: flex;
     font-size: 10vh;
-    height: fit-content;
-    text-align: center;
+    width: calc(100vh * 3000 / 2480);
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-p.title {
+.textbox {
+    display: flex;
+    height:fit-content;
+    text-align: center;
+    padding:0;
+    margin:2vh;
+    flex-direction: row;
+    
+}
+.title {
     display: flex;
     width: 90%;
     text-align: center;
@@ -46,6 +78,8 @@ p.title {
     padding:0;
     height:15vh;
     font-size: 10vh;
+    font-family: english, koreaB;
+    color:white;
 }
 .item_box {
     display: flex;
@@ -63,6 +97,8 @@ p.title {
     margin:1vh 0 1vh 0;
     padding:0;
     text-align: center;
+    font-family: koreaB;
+    color:white;
 }
 .project_img {
     display: flex;
@@ -92,8 +128,9 @@ p.title {
     font-size: 4vh;
     margin: 1vh;
     height: fit-content;
-    background-color: rgba(248, 0, 0, 0.486);
+    background-color: rgba(255, 208, 163, 0.486);
     border-radius: 20px;
+    color:white;
 }
 .project_explain {
     display: none;
@@ -108,7 +145,7 @@ p.title {
     width:100%;
     font-size: 2vh;
     flex-direction: column;
-    
+    color:rgba(255, 208, 163, 0.486);
 }
 .project_explain .myRole {
     display: block;
@@ -122,6 +159,7 @@ p.title {
     height:100%;
     justify-content: center;
 }
+
 .list_box li {
     display: flex;
     height: fit-content;

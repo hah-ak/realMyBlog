@@ -1,21 +1,23 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './style.module.css';
-import javascript from '../img/javascript.ico';
-import django from '../img/django.ico';
-import git from '../img/git.ico';
-import python from '../img/python.ico';
-import react from '../img/react.ico';
-import jquery from '../img/jquery.ico';
-import mysql from '../img/mysql.ico';
-import portBG from '../img/portBG.png';
+// import javascript from '../img/javascript.ico';
+// import django from '../img/django.ico';
+// import git from '../img/git.ico';
+// import python from '../img/python.ico';
+// import react from '../img/react.ico';
+// import jquery from '../img/jquery.ico';
+// import mysql from '../img/mysql.ico';
+import portBG from '../img/BG.png';
+import bolloon from '../img/bolloon.png';
+import skillBG from '../img/skillBG.png';
 const PortFolio = (props) => {
     const width = props.width
     const [prevent, setPrevent] = useState(false);
     const explainRef = useRef([0,1]);
     const containerRef=  useRef();
-    const introRef = useRef();
+    const introRef = useRef([0,0,0]);
     useEffect(()=>{
-        const backColors = [portBG,'#F67280','#C06C84','#6C5B7B','#355C7D']
+        const backColors = [portBG,'#F67280',skillBG,'#6C5B7B','#355C7D']
 
         backColors.forEach((element,index) => {
             element.indexOf('#',0) === -1 ?
@@ -24,13 +26,33 @@ const PortFolio = (props) => {
         });
     },[])
     useEffect(()=>{
-        const text = introRef.current.innerText
-        introRef.current.innerText = ''
-        const textArray = [[],[],[],[]]
-        for (let i = 0; i <= text.length/4; i++) {
-            const element = text.slice(4*i,4*i+4);
-            textArray[i%4].push(element);
+        const text1 = '생각하고 만들어가며'
+        const text2 = '나날이 발전하는 개발자가'
+        const text3 = '되고싶은 김용철입니다.'
+        const textDivider = (text,index) => {
+            for (let i = 0; i < text.length; i++) {
+                if (text[i] === " ") {
+                    introRef.current[index].querySelector(`span:last-child`).append(' ')
+                } else {
+                    const span = document.createElement('span')
+                    span.style.display = 'inline'
+                    span.style.position = 'relative'
+                    span.innerText = text[i]
+                    span.style.fontSize = '4.8vh'
+                    span.style.opacity = '0%'
+                    span.style.color = '#ac7059'
+                    text[i] === '김' || text[i] === '용' || text[i]==='철'?
+                    span.style.fontFamily='koreaB':
+                    span.style.fontFamily='korea'
+                    let delay = i % 4 * 700
+                    span.animate({opacity:['100%']},{delay:delay,duration:1000,fill:'forwards'})
+                    introRef.current[index].appendChild(span)
+                }
+            }
         }
+        textDivider(text1,0)
+        textDivider(text2,1)
+        textDivider(text3,2)
         
     },[])
     const handdleClickLang = (e,number) => {
@@ -62,17 +84,19 @@ const PortFolio = (props) => {
     return (
         <div className={styles.appcontainer} ref={containerRef} onWheel={(e) => handdleWheel(e)} onTouchMove={(e)=>handdleTouch(e)}>
             <div className={styles.items_wrapper}>
-                <div className={styles.intro} ref={introRef}>
-                나날이 만들어가는것에 성취감을 느끼는 개발자가 되고싶은 김용철입니다.
+                <div className={styles.intro} style={{backgroundImage:`url(${bolloon})`,zIndex:2,backgroundSize:'100% 100%'}}>
+                    <pre className={styles.textbox} ref={el=>introRef.current[0]=el}></pre>
+                    <pre className={styles.textbox} ref={el=>introRef.current[1]=el}></pre>
+                    <pre className={styles.textbox} ref={el=>introRef.current[2]=el}></pre>
                 </div>
             
             </div>
             <div className={styles.items_wrapper}>
-                <p className={styles.title}>학력사항</p>
+                <p className={styles.title}>Educational History</p>
                 <ul className={styles.list_box}>
-                    <li>
-                        <span className={styles.order}>대학교</span>
-                        <span className={styles.content}>전남대학교</span>
+                    <li style={{color:'#feeed6'}}>
+                        <span className={styles.order}>최종학력</span>
+                        <span className={styles.content}>전남대학교 졸업 <br/> 2011.02~2018.02</span>
                     </li>
                     <li>
                         <span className={styles.order}>전공</span>
@@ -87,7 +111,8 @@ const PortFolio = (props) => {
             </div>
             <div className={styles.items_wrapper}>
                 <p className={styles.title}>Skill</p>
-                <ul className={styles.image_box}>
+                <div className={styles.item_box}></div>
+                {/* <ul className={styles.image_box}>
                     <li>
                         <img src={python} alt="python"/>
                         <img src={django} alt="django"/>
@@ -101,11 +126,11 @@ const PortFolio = (props) => {
                         <img src={react} alt="react"/>
                         <img src={jquery} alt="jquery"/>
                     </li>
-                </ul>
+                </ul> */}
             </div>
             <div className={styles.items_wrapper}>
                 <p className={styles.title}>Personal Project</p>
-                <p className={styles.project_title}>개인블로그</p>
+                <p className={styles.project_title}>MyBlog</p>
                 <div className={styles.item_box}>
                     <div className={styles.project_img}>
                         <img src="" alt=""/>
