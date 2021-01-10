@@ -7,9 +7,9 @@ import styles from './style.module.css';
 // import react from '../img/react.ico';
 // import jquery from '../img/jquery.ico';
 // import mysql from '../img/mysql.ico';
-import portBG from '../img/BG.png';
-import bolloon from '../img/bolloon.png';
-import skillBG from '../img/skillBG.png';
+import portBG from '../../img/BG.png';
+import bolloon from '../../img/bolloon.png';
+import skillBG from '../../img/skillBG.png';
 const PortFolio = (props) => {
     const width = props.width
     const [prevent, setPrevent] = useState(false);

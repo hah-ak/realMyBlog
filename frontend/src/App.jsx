@@ -8,8 +8,8 @@ import PortFolio from './components/portfolio/portFolio';
 import Choicepostindex from './components/post/choicepost/choicepostindex';
 import Detailpost from './components/post/detailpost/detailpost';
 import Post from './components/post/mypost/post';
-import menubar from './components/img/menubar.ico';
-import close from './components/img/close.ico';
+import menubar from './img/menubar.ico';
+import close from './img/close.ico';
 // window창 크기의 변화에 따라 높이와 변화를 인식하는 state의 역할을 해준다.
 const useWindowSize = () => {
   const [size, setSize] = useState([window.innerHeight,window.innerWidth])

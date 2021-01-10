@@ -1,6 +1,6 @@
 import styles from './style.module.css';
-import menubar from '../../img/menubar.ico';
-import close from '../../img/close.ico';
+import menubar from '../../../img/menubar.ico';
+import close from '../../../img/close.ico';
 const sidebar_toggle = () => {
     const sidebar = document.querySelector('.sidebar')
     const sidebar_icon = document.querySelector(`.${styles.sidebar_icon}`)

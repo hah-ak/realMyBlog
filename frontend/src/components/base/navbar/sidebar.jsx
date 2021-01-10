@@ -2,17 +2,17 @@ import React, { useRef } from 'react';
 import styles from './style.module.css';
 import {active_hover, inactive_hover } from './sidebarfunc';
 import ShowOrder from './showOrder';
-import home from '../../img/home.ico';
-import post from '../../img/post.ico';
-import team from '../../img/team.ico';
-import recent from '../../img/recent.ico';
-import javascript from '../../img/javascript.ico';
-import django from '../../img/django.ico';
-import python from '../../img/python.ico';
-import react from '../../img/react.ico';
-import git from '../../img/git.ico';
-import portfolio from '../../img/portfolio.ico';
-import menubar from '../../img/menubar.ico';
+import home from '../../../img/home.ico';
+import post from '../../../img/post.ico';
+import team from '../../../img/team.ico';
+import recent from '../../../img/recent.ico';
+import javascript from '../../../img/javascript.ico';
+import django from '../../../img/django.ico';
+import python from '../../../img/python.ico';
+import react from '../../../img/react.ico';
+import git from '../../../img/git.ico';
+import portfolio from '../../../img/portfolio.ico';
+import menubar from '../../../img/menubar.ico';
 import { useHistory } from 'react-router-dom';
 // function useGetheight() { 
 //     const [height,setHeight] = useState(window.innerHeight)

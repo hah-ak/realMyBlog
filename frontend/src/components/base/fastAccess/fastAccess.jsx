@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styles from './style.module.css';
-import down from '../../img/down.ico';
+import shortcuts from '../../../img/Shortcuts.ico';
 const FastAccess = ({childRen}) => {
+    const contentnumbers = useRef();
+    const handdleArrowClick = (e) => {
+        contentnumbers.current.classList.toggle(styles.active)
+        contentnumbers.current.querySelectorAll('span').forEach((element)=> {
+            element.classList.toggle(styles.active)
+        })
+    }
     const scrollMove = (position) => {
-        position === 'top'?
-        window.scrollTo({top:0, behavior:'smooth'}):
         childRen.current[position][0].scrollIntoView({behavior:'smooth'})
     }    
       
@@ -24,15 +29,13 @@ const FastAccess = ({childRen}) => {
         scrollMove(position)
     }
     return (
-        <div className={styles.contentnumbers}>
-            <span onClick={(e)=> clickScrollNum(e,'top')}>
-                <img
-                        className={styles.upDown}
-                        src={down}
-                        alt="Click or wheel" 
-                       
-                    />
-            </span>
+        <div className={styles.contentnumbers} ref={contentnumbers}>
+            <img
+                className={styles.upDown}
+                src={shortcuts}
+                alt="Click or wheel" 
+                onClick={(e)=>handdleArrowClick(e)}
+            />
             {childRen.current.map((element,i)=>{
                 return (
                 
