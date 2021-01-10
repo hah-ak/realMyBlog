@@ -10,6 +10,9 @@ import styles from './style.module.css';
 import portBG from '../../img/BG.png';
 import bolloon from '../../img/bolloon.png';
 import skillBG from '../../img/skillBG.png';
+import github from '../../img/github.ico';
+import Myblog from '../../img/myblog.JPG'
+import teamProImg from '../../img/teamProImg.JPG'
 const PortFolio = (props) => {
     const width = props.width
     const [prevent, setPrevent] = useState(false);
@@ -111,6 +114,18 @@ const PortFolio = (props) => {
                         2020.07 ~ 2020.11 광주AI사관학교</span>
                     </li>
                 </ul>
+                <p className={styles.title}>Github</p>
+                <ul className={styles.list_box}>
+                    <li>
+                        <span className={styles.order}>
+                            <img src={github} alt="github" className={styles.github}/>
+                        </span>
+                        <span className={`${styles.content} ${styles.urlclick}`} onClick={(e)=>linkClick(e)}>
+                        https://github.com/hah-ak
+                        </span>
+                    </li>
+                </ul>
+                
             </div>
             <div className={styles.items_wrapper}>
                 <p className={styles.title}>Skill</p>
@@ -136,7 +151,7 @@ const PortFolio = (props) => {
                 <p className={styles.project_title}>MyBlog</p>
                 <div className={styles.item_box}>
                     <div className={styles.project_img}>
-                        <img src="" alt=""/>
+                        <img src={Myblog} alt=""/>
                     </div>
                     
                     <div className={styles.project_explainbox} ref={el=>(explainRef.current[0]=el)}>
@@ -196,7 +211,7 @@ const PortFolio = (props) => {
                 <p className={styles.project_title}>YouKnowWhat?</p>
                 <div className={styles.item_box}>
                     <div className={styles.project_img}>
-                        <img src="" alt=""/>
+                        <img src={teamProImg} alt=""/>
                     </div>
                     
                     <div className={styles.project_explainbox}  ref={el=>explainRef.current[1]=el}>

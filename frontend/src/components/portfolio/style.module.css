@@ -53,6 +53,7 @@ ul li span {
     align-items: center;
     justify-content: center;
     background-size: 100% 100vh;
+    padding-bottom: 2vh;
 }
 .intro {
     display: flex;
@@ -90,6 +91,12 @@ ul li span {
     height:85vh;
     align-items: center;
     justify-content: space-between;
+}
+.github {
+    display: flex;
+    width:10vh;
+    width:10vh;
+    cursor: pointer;
 }
 .project_title {
     display: flex;
